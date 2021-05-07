@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to Next Generation Sequencing</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Alex Sánchez-Pla" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to Next Generation Sequencing
+### Alex Sánchez-Pla
+### Genetics, Microbiology and Statistics Department (UB) <br> Statistics and Bioinformatics Unit (VHIR)
+### 2011/04/13 (updated: 2021-05-07)
+
+---
+
+
+
+
+class: inverse, middle, center
+
+# Outline
+
+---
+
+class: inverse, middle, center
+
+# Introduction and Motivation
+
+---
+
+# Remember the _Omics Cascade_
+
+.center[ 
+&lt;img align = "center" src="images/omicsCascade.jpg" width = "90%"&gt; 
+ ] 
+
+---
+
+# From genome to infinity, and beyond
+
+.pull-left[
+
+- Assuming the Central Dogma and the Omics Cascade means &lt;br&gt;assuming that _knowing and understanding the genome sequence is key to understand life and disease_.
+
+- Said otherwise. "If you want to study anything: sequence it!"
+
+]
+
+.pull-right[
+
+&lt;img align = "center" src="images/anyDNAsequenced.png" width = "100%"&gt; 
+
+]
+
+---
+
+# Genome sequencing
+
+- Genome sequencing is _figuring out the order of DNA nucleotides, or bases, in a genome, the order of As, Cs, Gs, and Ts that make up an organism's DNA_.
+- It has been developing for almost half century and has been thoroughly described [@Messi1998, @Kulski2016].
+- Some hints:
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Years &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Description &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Sequencing efficiency (bp/person/year &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (1965) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Yeast tRNA sequenced &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (1977-78) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sanger Dideoxy termination and Gilbert Chemical Degradation Methods &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (1986) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Leroy Hood's Partial Automation &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25.000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; (1992-95) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Craig Venter's first sequencing 'factory' at TIGR &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1000.000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- Increased automation, without great changes in the fundamental ideas, led to the sequencing of the first genomes.
+
+---
+
+
+# The Human Genome Project
+
+&lt;p&gt;&lt;/p&gt;
+&lt;img align = "center" src="images/humanGenomeProject.png" width = "100%"&gt; 
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+Follow [this link](http://exploreable.wordpress.com/2011/05/03/the-story-of-the-human-genome-project-a-short-narration/) to learn about the story of the Human Genome Project.
+
+---
+
+# The rise of Next Generation Sequencing
+
+- The first Human Genome was sequenced using _Sanger Sequencing- and the _shotgun_ method.
+
+- By mid of the first decade of XXI a new technology emerged.
+- It was called _Next Generation Sequencing_ because it served the same purpose with a series characteristics that have made it revolutionary (again):
+
+  - Parallelized,
+  - High Throughput,
+  - Cost-effective,
+  - Many competing technologies.
+  
+- By 2020 it has become a standard but it has also kept evolving:
+- "Next-Next" Generation sequencing
+
+  - Single molecule (no amplification)
+  - Long Reads
+  
+
+
+---
+class: middle, center
+
+# NGS: much more for much less
+
+
+&lt;p&gt;
+&lt;img align = "center" src="images/seqCosts_vs_seqYield.png" width = "110%"&gt; 
+
+---
+
+class: inverse, middle, center
+
+# Overview of Sequencing Technologies
+
+---
+
+# Sanger Sequencing
+
+.pull-left[
+- The method is based on the selective incorporation of chain-terminating dideoxynucleotides by DNA polymerase during in vitro DNA replication.
+
+- This results in multiple chains of different sizes ending with the same nucleotides, where the size indicates the nucleortide's position.
+
+- Separating the chains using gel electrophoresis allows establishing the order.
+
+[Follow this link](https://www.youtube.com/watch?v=FhlKYsc_9_A) to see an animation.
+
+]
+
+.pull-right[
+
+&lt;img align = "center" src="images/SangerSequencing1.png" width = "100%"&gt; 
+
+]
+
+---
+
+# Sanger vs Next Generation Sequencing
+
+.pull-left[
+
+]
+
+.pull-right[
+&lt;img align = "center" src="images/SangerVSNGS1.png" width = "100%"&gt; 
+]
+
+---
+
+
+# Sanger vs Next Generation Sequencing
+
+.pull-left[
+
+]
+
+.pull-right[
+&lt;img align = "center" src="images/SangerVSNGS2.png" width = "100%"&gt; 
+]
+
+---
+
+# Sanger vs Next Generation Sequencing
+
+.pull-left[
+
+]
+
+.pull-right[
+&lt;img align = "center" src="images/SangerVSNGS3.png" width = "100%"&gt; 
+]
+
+---
+
+# Sanger vs Next Generation Sequencing
+
+.pull-left[
+
+]
+
+.pull-right[
+&lt;img align = "center" src="images/SangerVSNGS4.png" width = "100%"&gt; 
+]
+
+---
+
+# Sanger vs Next Generation Sequencing
+
+.pull-left[
+
+]
+
+.pull-right[
+&lt;img align = "center" src="images/SangerVSNGS5.png" width = "100%"&gt; 
+]
+
+---
+
+
+# Next Generation Sequencing
+
+.center[ 
+&lt;img align = "center" src="images/NextGenSeq1.png" width = "100%"&gt; 
+]
+
+--- 
+
+# Next Generation Sequencing
+
+.center[ 
+&lt;img align = "center" src="images/NextGenSeq2.png" width = "100%"&gt; 
+]
+
+--- 
+
+# Next Generation Sequencing
+
+&lt;img align = "center" src="images/NextGenerationSequencing3.png" width = "100%"&gt; 
+
+--- 
+
+# Next Generation Sequencing
+
+&lt;img align = "center" src="images/NextGenerationSequencing4.png" width = "100%"&gt; 
+
+--- 
+
+# Next Generation Sequencing
+
+&lt;img align = "center" src="images/NextGenerationSequencing5.png" width = "100%"&gt; 
+
+--- 
+
+# Next Generation Sequencing
+
+&lt;img align = "center" src="images/NextGenerationSequencing6.png" width = "100%"&gt; 
+
+--- 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

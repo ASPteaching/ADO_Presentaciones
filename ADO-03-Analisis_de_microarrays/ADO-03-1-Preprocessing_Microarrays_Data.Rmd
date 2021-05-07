@@ -1,0 +1,19 @@
+---
+title: "Preprocessing Microarray Data (1)"
+subtitle: "Exploratory Analysis and Quality Control"
+author: "Alex Sanchez y Sergi Civit"
+date: ""
+output:
+  beamer_presentation:
+    includes:
+      in_header: header.tex
+    # incremental : true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Recall: The Microarray (Omics) Data Analysis Process
+
+![](e:/46217610F/AppData/Local/RStudio/tmp/paste-32A095E3.png)

@@ -1,0 +1,76 @@
+---
+title: "Análisis Multivariante"
+subtitle: "Presentación de la asignatura"
+author: "Francesc Carmona y Alex Sanchez"
+date: "21 de septiembre de 2020"
+output:
+  beamer_presentation:
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Descripción
+
+- El Análisis Multivariante ("AMV", en adelante) comprende  métodos estadísticos y matemáticos para analizar, describir e interpretar observaciones multidimensionales, es decir, que provienen de más de una variable. 
+
+- El AMV tiene más de un siglo de historia pero su interes y sus desarrollo continúan creciendo día a dia incluyendo tópicos "modernos" como el _Big Data_ o el _Machine learning_ y, obviamente el _Data Visualization_
+
+- Este curso presenta los temas más importantes y habituales con algo de sesgo hacia un enfoque estadístico clásico.
+
+## Conocimientos previos
+
+- Estadística e Inferencia Estadística
+
+- Software estadístico (R)
+
+- El AMV hace un uso extensivo de matrices y conceptos relacionados por lo que cierta (o mucha) familiaridad con el álgebra matricial será de gran ayuda.
+
+- Algunos autores incluyen la regresión en los cursos de AMV. Independientemente de si la Regresión Lineal Múltiple debe considerarse un método estadístico multivariante o no, también es útil estar fgamiliarizado con esta materia.
+
+## Objetivos 
+
+- Adquirir una visión de conjunto del AMV dividiéndolo en métodos para la:
+    + Inferencia
+    + Representación de datos en dimensión reducida
+    + Clasificación supervisada y no supervisada.
+    
+- Saber como y cuando utilizar dichos métodos.
+    - __Qué__ podemos hacer
+    - __Cuando__ se puede utilizar (y cuando no hacerlo!)
+    - __Cómo__ se lleva a cabo.
+    - __Cómo__ interpretar lo que se obtiene
+
+## Contenidos
+
+- Módulo 1. Introducción. Visualizació de datos. Repaso de Álgebra Lineal.
+- Módulo 2. Inferencia multivariante.
+- Módulo 3. Análisis de componentes principales.
+- Módulo 4. Análisis de proximidades (_multidimensional scaling_)
+- Módulo 5. Análisis de correspondencias.
+- Módulo 6. Análisis de conglomerados (_cluster analysis_)
+- Módulo 7. Análisis discriminante
+
+## Recursos
+
+- Textos básicos (disponibles en el campus)
+    + Multivariate statistical methods : a primer. Fourth edition. Bryan F.J. Manly and Jorge A. Navarro Alberto. Boca Raton : CRC Press, 2017.
+    + CUADRAS, C.M. Nuevos Métodos de Análisis Multivariante. Barcelona: CMC Editions, 2019 (PDF)
+    + Apuntes de álgebra matricial
+    + Otros materiales en el campus.
+
+- Ejercicios y casos resueltos.
+
+## Evaluación contínua
+
+- Participación a través de ejercicios y debates. Estos pueden consistir en:
+
+        + Análisis de datos
+        + Resolución de problemas 
+
+- Realización de dos pruebas de evaluación contínua ("PECS") con ejercicios similares a los planteados en clase.
+
+

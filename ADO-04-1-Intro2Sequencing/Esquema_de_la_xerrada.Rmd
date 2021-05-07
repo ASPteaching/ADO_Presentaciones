@@ -1,0 +1,81 @@
+---
+title: |
+    | _Introduction 2 Next Generation Sequencing_
+author: "Alex Sanchez-Pla"
+date: "April 2021"
+output:
+ prettydoc::html_pretty:
+    toc: true
+    toc_depth: 3
+    theme: architect
+    highlight: github
+    number_sections: true
+editor_options: 
+  chunk_output_type: console
+  bibliography: references.bib
+# link-citations: yes
+---
+
+```{r setup, include=FALSE}
+require(knitr)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, comment = NA, prompt = TRUE, tidy = FALSE, fig.width = 7, fig.height = 7, fig_caption = TRUE,cache=FALSE)
+Sys.setlocale("LC_TIME", "C")
+```
+
+```{r packages, include=FALSE}
+# require(devtools)
+# if(!require(installifnot)) install_github("uebvhir/installifnot")
+
+library("bibtex")
+```
+
+# Motivació
+
+Perquè parlem de seqüenciació
+
+## Remember the _Omics Cascade_
+
+## From genome to infinity, and beyond
+
+## Genome sequencing
+
+## The Human Genome Project
+
+## To Understand something, sequence it (Ana Conesa)
+
+# Evolució de les tecnologies de seqüenciació (un altre cop)
+
+## El cost de la seqüenciació
+
+https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost
+
+## La capacitat de seqüenciació
+
+# Overview of sequencing technologies
+
+## Sanger Sequencing
+
+## 2nd Next Generation technologies: From Sanger to NGS
+
+## Comparison 1- Library construction vs in vivo amplification
+
+## Comparison 2 - Array (paralel) based sequencing
+
+## The sequencing process in detail (1) Library preparation
+
+## The sequencing process in detail (2) Clonal Amplification
+
+## The sequencing process in detail (3) Cyclic Sequencing
+
+## (2nd GS) Platforms
+
+## 3rd Generation Sequencing
+
+## (3rd GS) Platforms
+
+## Platforms comparison
+
+## Sequencing generations face to fac: Sanger vs NGS vs 3rd Gen
+
+
+
