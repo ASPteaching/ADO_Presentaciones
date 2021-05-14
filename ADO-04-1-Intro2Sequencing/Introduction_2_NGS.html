@@ -6,7 +6,8 @@
     <meta name="author" content="Alex Sánchez-Pla" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
@@ -15,26 +16,57 @@ class: center, middle, inverse, title-slide
 # Introduction to Next Generation Sequencing
 ### Alex Sánchez-Pla
 ### Genetics, Microbiology and Statistics Department (UB) <br> Statistics and Bioinformatics Unit (VHIR)
-### 2011/04/13 (updated: 2021-05-07)
+### 2011/04/13 (updated: 2021-05-14)
 
 ---
 
 
 
 
-class: inverse, middle, center
+# ```{r, load_refs, include=FALSE, cache=FALSE}
+# require(RefManageR)
+# BibOptions(check.entries = FALSE,
+#            bib.style = "authoryear",
+#            cite.style = "alphabetic",
+#            style = "markdown",
+#            hyperlink = FALSE,
+#            dashed = FALSE)
+# ```
+# 
+# ```{r}
+# myBib &lt;- ReadBib("references.bib", check = FALSE)
+# ```
+
 
 # Outline
 
+.columnwide[
+  ### 1) [Introduction: DNA sequencing.](#Introduction)
+  ### 2) [Overview of Sequencing Methods and Technologies.](#Overview)
+  ### 3) [NGS Bioinformatics.](#Bioinformatics)
+  ### 4) [Applications of NGS.](#Applications)
+]
+
 ---
 
 class: inverse, middle, center
 
-# Introduction and Motivation
+name: Introduction
+
+# Introduction and Motivation &lt;a id="Introduction"&gt;&lt;/a&gt;
+
 
 ---
 
-# Remember the _Omics Cascade_
+
+# From the _Central Dogma_
+
+.center[ 
+&lt;img align = "center" src="images/centralDogma.gif" width = "50%"&gt; 
+ ] 
+
+---
+# Into the _Omics Cascade_
 
 .center[ 
 &lt;img align = "center" src="images/omicsCascade.jpg" width = "90%"&gt; 
@@ -63,36 +95,36 @@ class: inverse, middle, center
 # Genome sequencing
 
 - Genome sequencing is _figuring out the order of DNA nucleotides, or bases, in a genome, the order of As, Cs, Gs, and Ts that make up an organism's DNA_.
-- It has been developing for almost half century and has been thoroughly described [@Messi1998, @Kulski2016].
+- It has been developing for almost half century and has been thoroughly described.  
 - Some hints:
 
 
 &lt;table&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; Years &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Year discov. &lt;/th&gt;
    &lt;th style="text-align:left;"&gt; Description &lt;/th&gt;
    &lt;th style="text-align:left;"&gt; Sequencing efficiency (bp/person/year &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; (1965) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1965 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Yeast tRNA sequenced &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; (1977-78) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1977-78 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Sanger Dideoxy termination and Gilbert Chemical Degradation Methods &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 1000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; (1986) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1986 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Leroy Hood's Partial Automation &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 25.000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; (1992-95) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1992-95 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Craig Venter's first sequencing 'factory' at TIGR &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 1000.000 &lt;/td&gt;
   &lt;/tr&gt;
@@ -102,7 +134,6 @@ class: inverse, middle, center
 - Increased automation, without great changes in the fundamental ideas, led to the sequencing of the first genomes.
 
 ---
-
 
 # The Human Genome Project
 
@@ -147,8 +178,23 @@ class: middle, center
 ---
 
 class: inverse, middle, center
+name: Overview
 
-# Overview of Sequencing Technologies
+# Overview of Sequencing Methods and Technologies
+
+---
+
+# Resources
+
+- Sequencing is a dynamic process which is better visualized through animations.
+
+- In order to help understand it and to promote its use many educational videos have been prepared by both companies and academics.
+
+- Some interesting resources:
+
+  - [Sequencing Fundamentals (15-min, Illumina)](https://support.illumina.com/content/dam/illumina-support/courses/sequencing-fundamentals/story_html5.html?iframe)
+  - [Introduction to NGS, YouSeq](https://youseq.com/learning)
+  - [Links-2-links, some may not work](https://www.k-state.edu/igenomics/workshops/IGF%20Self%20Education%20Links.pdf)
 
 ---
 
@@ -176,104 +222,254 @@ class: inverse, middle, center
 # Sanger vs Next Generation Sequencing
 
 .pull-left[
-
-]
-
-.pull-right[
 &lt;img align = "center" src="images/SangerVSNGS1.png" width = "100%"&gt; 
 ]
 
+.pull-right[
+
+- Next Generation Sequencing goes through the same steps as Sanger Sequencing, only it is done in more efficient ways.
+
+- We consider two such steps:
+
+  - Cloning
+  
+  - Sequencing
+
+]
 ---
 
 
 # Sanger vs Next Generation Sequencing
 
 .pull-left[
-
-]
-
-.pull-right[
 &lt;img align = "center" src="images/SangerVSNGS2.png" width = "100%"&gt; 
 ]
 
+.pull-right[
+
+1) Construction of a sequencing library
+
+  - Clonal amplification to generate sequencing features
+
+]
+
 ---
 
 # Sanger vs Next Generation Sequencing
 
 .pull-left[
-
-]
-
-.pull-right[
 &lt;img align = "center" src="images/SangerVSNGS3.png" width = "100%"&gt; 
 ]
 
+.pull-right[
+
+1) Construction of a sequencing library
+
+  - NGS: Clonal amplification to generate sequencing features
+  - Sanger: In vivo cloning, transformation, colony picking...
+
+]
+
 ---
 
 # Sanger vs Next Generation Sequencing
 
 .pull-left[
-
-]
-
-.pull-right[
 &lt;img align = "center" src="images/SangerVSNGS4.png" width = "100%"&gt; 
 ]
 
+.pull-right[
+
+1) Construction of a sequencing library
+  - NGS: Clonal amplification to generate sequencing features
+  - Sanger: In vivo cloning, transformation, colony picking...
+
+2) Sequencing
+  - NGS: Array-based sequencing
+    - High degree of parallelism
+]
+
 ---
 
 # Sanger vs Next Generation Sequencing
 
 .pull-left[
-
+&lt;img align = "center" src="images/SangerVSNGS5.png" width = "100%"&gt; 
 ]
 
 .pull-right[
-&lt;img align = "center" src="images/SangerVSNGS5.png" width = "100%"&gt; 
+
+1) Construction of a sequencing library
+  - NGS: Clonal amplification to generate sequencing features
+  - Sanger: In vivo cloning, transformation, colony picking...
+
+2) Sequencing
+  - NGS: 
+      - Array-based sequencing
+      - Higher degree of parallelism 
+  - Sanger
+      - Capillary-based sequencing
+      - Low degree of parallelism
 ]
 
 ---
 
+# Next Generation Sequencing
+
+.center[ 
+&lt;img align = "center" src="images/NextGenerationSequencing1.png" width = "100%"&gt; 
+]
+
+---
 
 # Next Generation Sequencing
 
 .center[ 
-&lt;img align = "center" src="images/NextGenSeq1.png" width = "100%"&gt; 
+&lt;img align = "center" src="images/NextGenerationSequencing2.png" width = "100%"&gt; 
 ]
 
---- 
-
-# Next Generation Sequencing
-
-.center[ 
-&lt;img align = "center" src="images/NextGenSeq2.png" width = "100%"&gt; 
-]
-
---- 
+---
 
 # Next Generation Sequencing
 
 &lt;img align = "center" src="images/NextGenerationSequencing3.png" width = "100%"&gt; 
 
---- 
+---
 
 # Next Generation Sequencing
 
 &lt;img align = "center" src="images/NextGenerationSequencing4.png" width = "100%"&gt; 
 
---- 
+---
 
 # Next Generation Sequencing
 
 &lt;img align = "center" src="images/NextGenerationSequencing5.png" width = "100%"&gt; 
 
---- 
+---
 
 # Next Generation Sequencing
 
 &lt;img align = "center" src="images/NextGenerationSequencing6.png" width = "100%"&gt; 
 
---- 
+---
+
+class: inverse, middle, center
+
+# 2nd Generation Sequencing Technologies
+
+---
+
+# 2nd Generation Sequencing Technologies
+
+&lt;img align = "center" src="images/2ndGenerationSequencing1.png" width = "100%"&gt; 
+
+---
+
+# Small Sequencing Platforms
+
+&lt;img align = "center" src="images/2ndGenerationSequencing2.png" width = "100%"&gt; 
+
+---
+
+# Big Sequencing Platforms
+
+&lt;img align = "center" src="images/2ndGenerationSequencing3.png" width = "100%"&gt; 
+
+---
+
+# Next next generation Sequencing
+.pull-left[
+&lt;img align = "center" src="images/3rdGenerationSequencing1.png" width = "100%"&gt; 
+]
+.pull-right[
+- Next (2nd) generation sequencing improved yield considerably but
+Some (amplification) steps steps cannot avoid a certain % of errors.
+- 3rd («next next») generation sequencing avoids some steps which yields less % of errors
+- Very promising but not fully adopted yet!
+
+]
+---
+
+# Next next generation Sequencing
+
+&lt;img align = "center" src="images/3rdGenerationSequencing2.png" width = "100%"&gt; 
+
+---
+
+# Next next generation Sequencing
+
+&lt;img align = "center" src="images/3rdGenerationSequencing3.png" width = "100%"&gt; 
+
+---
+
+# Speed Variation by Technology
+
+&lt;img align = "center" src="images/SpeedByTechnology.png" width = "90%"&gt; 
+
+---
+
+class: inverse, middle, center
+
+name: Bioinformatics
+
+# NGS Bioinformatics
+
+---
+
+# NGS Bioinformatics Challenges
+
+&lt;p&gt;&lt;p&gt;
+
+- Need for large amount of CPU power
+  - Informatics groups must manage computer clusters
+  - Challenges in parallelizing existing software or redesign of algorithms to work in a parallel environment
+  - Another level of software complexity and challenges to interoperability
+- VERY large text files (~10 million lines long)
+  - Can’t do ‘business as usual’ with familiar tools such as Perl/Python.
+  - Impossible memory usage and execution time 
+  - Impossible to browse for problems
+- Need sequence Quality filtering
+
+---
+
+# Data Management Issues
+
+&lt;p&gt;&lt;p&gt;
+
+- Raw data are large. How long should be kept?
+- Processed data are manageable for most people
+  - 20 million reads (50bp) ~1Gb
+- More of an issue for a facility: HiSeq recommends 32 CPU cores, each with 4GB RAM
+- Certain studies much more data intensive than other
+  - Whole genome sequencing
+    - A 30X coverage genome pair (tumor/normal)~500 GB
+    - 50 genome pairs ~ 25 TB
+
+---
+
+# Which Software for NGS?
+
+&lt;img align = "center" src="images/softwareForNGS.png" width = "90%"&gt; 
+
+
+---
+
+class: inverse, middle, center
+
+name: Applications
+
+# Applications of Next Generation Sequencing &lt;a id="Applications"&gt;&lt;/a&gt;
+
+---
+
+# References and Resources (1)
+
+## Some interesting resources
+
+  - [Sequencing Fundamentals (15-min, Illumina)](https://support.illumina.com/content/dam/illumina-support/courses/sequencing-fundamentals/story_html5.html?iframe)
+  - [Introduction to NGS, YouSeq](https://youseq.com/learning)
+  - [Links-2-links, some may not work](https://www.k-state.edu/igenomics/workshops/IGF%20Self%20Education%20Links.pdf)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
